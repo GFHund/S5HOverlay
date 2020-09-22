@@ -10,7 +10,7 @@ class LastLapTimeState: public AbstractState{
     
     public:
     void init(Renderer renderer);
-    void tick();
+    void tick(std::chrono::duration<int,std::milli> time);
     void render(Renderer renderer);
     void finish(Renderer renderer);
 }; 

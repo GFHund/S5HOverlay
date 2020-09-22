@@ -6,7 +6,12 @@ void StateMachine::init(Renderer renderer){
 }
 void StateMachine::loop(Renderer renderer){
     AbstractState* state = this->mStates.at(this->mCurState);
-    state->tick();
+    typedef std::chrono::duration<int,std::milli> milliSec;
+    //this->tp2 = std::chrono::system_clock::now();
+    this->tp2 =  std::chrono::time_point_cast<milliSec>(std::chrono::system_clock::now());
+
+    state->tick(tp2 - tp1);
+    this->tp1 = std::chrono::time_point_cast<milliSec>(std::chrono::system_clock::now());
     state->render(renderer);
 }
 void StateMachine::finish(Renderer renderer){

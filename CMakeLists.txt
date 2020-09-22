@@ -19,7 +19,9 @@ add_subdirectory("vendor/glfw-3.3.2")
 
 find_package(GLEW REQUIRED)
 if (GLEW_FOUND)
-    include_directories(${GLEW_INCLUDE_DIRS})
+    message(${GLEW_INCLUDE_DIR})
+    # message(${GLEW_INCLUDE_DIRS})
+    include_directories(${GLEW_INCLUDE_DIR})
     link_libraries(${GLEW_LIBRARIES})
     message(${GLEW_LIBRARIES})
     message("GLEW found\n")
@@ -55,6 +57,7 @@ set(SOURCES src/main.cpp
 add_executable(S5HOverlay ${SOURCES})
 
 if(MINGW)
+    message("FOUND MINGW \n")
     target_link_libraries(S5HOverlay ws2_32 ${CMAKE_THREAD_LIBS_INIT} glfw OpenGL::GL ${FREETYPE_LIBRARIES})
 endif()
 
