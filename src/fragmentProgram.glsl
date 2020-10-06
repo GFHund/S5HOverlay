@@ -6,5 +6,6 @@ out vec4 out_color;
 void main()
 {
     //out_color = vec4(color, 1.0);
-    out_color = texture(tex,texPos);
+    vec2 texPos2 = vec2(1.0- texPos.x,texPos.y);
+    out_color = texture(tex,texPos2);
 }

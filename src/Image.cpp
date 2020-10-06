@@ -51,7 +51,7 @@ void Image::setGlTexId(unsigned int glTexId){
 }
 
 Image* Image::getDefaultImage(unsigned int width,unsigned int height,unsigned char r,unsigned char g,unsigned char b, unsigned char a){
-    Image* img = new Image(512,512);
+    Image* img = new Image(width,height);
     for(int i=0; i < width;i++){
         for(int k=0;k < height;k++){
             img->setPixel(i,k,r,g,b,a);

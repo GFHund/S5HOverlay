@@ -19,8 +19,9 @@ void LastLapTimeState::init(Renderer renderer){
     font.setBackgroundColor(backgroundColor);
     font.setFontColor(fontColor);
     font.setFontFamily("Dosis-Medium.ttf");
-    font.setFontSize(16);
-    Image* img = Image::getImageFromText("Dies ist ein Test",font);
+    //font.setFontSize(16);
+    font.setFontSize(2048*0.15);
+    Image* img = Image::getImageFromText("Dies ist ein Test Hoffentlich bricht die schrift um. Ich denke der Text muss laenger sein daher schreibe ich diese zeilen. Ich denke der Text muss noch viel viel laenger werden",font);
     this->ticker->setImage(0,img);
 
     Shader* sha =  nullptr;
@@ -42,7 +43,7 @@ void LastLapTimeState::tick(std::chrono::duration<int,std::milli> duration){
     float speed = 360.0f / 500000.0f;//360 Deg / 5000 ms
     //std::cout << "Speed: " << speed << std::endl;
     //std::cout << "duration: " << d << std::endl;
-    dogEngine::CQuaternion additionalRotation = dogEngine::CQuaternion(dogEngine::CVector3(0,1,0),speed*d);
+    dogEngine::CQuaternion additionalRotation = dogEngine::CQuaternion(dogEngine::CVector3(0,-1,0),speed*d);
     dogEngine::CQuaternion resultRotation = curRotation * additionalRotation;
     this->ticker->setRotation(resultRotation);
 }

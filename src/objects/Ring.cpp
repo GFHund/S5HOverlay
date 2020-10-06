@@ -25,7 +25,7 @@ ModelData* Ring::getModelData(unsigned int& size){
     float inc = (2*pi)/numberSegments;
     int k = 0;
     //std::cout << "Vertices index "<<std::endl;
-    float scale = 1.5f;
+    float scale = 2.0f;
     float v,v1;
 
     for(float i = 0;i<2*pi;i+=inc,k+=6){
@@ -39,7 +39,7 @@ ModelData* Ring::getModelData(unsigned int& size){
         float y1 = 0.9f;
         
         int numSegment = k/6;
-        std::cout << "segment: " << numSegment << std::endl;
+        //std::cout << "segment: " << numSegment << std::endl;
         
         int row = (numSegment - numSegment % 4) /4;
         float u = (numSegment % 4)*0.25f;
@@ -52,9 +52,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k].z = z;
         ret[k].u = u;
         ret[k].v = v1;
-        std::cout << k << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << k << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
 
         //v = floor((k+1)/12.0f) * (1.0f /8.0f);
         //v1 = ceil((k+1)/12.0f) * (1.0f / 8.0f);
@@ -64,9 +64,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k+1].z = z1;
         ret[k+1].u = u1;
         ret[k+1].v = v1;
-        std::cout << (k+1) << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << (k+1) << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
 
         //v = floor((k+2)/12.0f) * (1.0f /8.0f);
         //v1 = ceil((k+2)/12.0f) * (1.0f / 8.0f);
@@ -77,9 +77,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k+2].u = u;
         ret[k+2].v = v;
 
-        std::cout << (k+2) << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << (k+2) << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
 
         //v = floor((k+3)/12.0f) * (1.0f /8.0f);
         //v1 = ceil((k+3)/12.0f) * (1.0f / 8.0f);
@@ -90,9 +90,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k+3].u = u1;
         ret[k+3].v = v;
 
-        std::cout << (k+3) << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << (k+3) << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
 
         //v = floor((k+4)/12.0f) * (1.0f /8.0f);
         //v1 = ceil((k+4)/12.0f) * (1.0f / 8.0f);
@@ -103,9 +103,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k+4].u = u;
         ret[k+4].v = v;
 
-        std::cout << (k+4) << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << (k+4) << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
 
         //v = floor((k+5)/12.0f) * (1.0f /8.0f);
         //v1 = ceil((k+5)/12.0f) * (1.0f / 8.0f);
@@ -116,9 +116,9 @@ ModelData* Ring::getModelData(unsigned int& size){
         ret[k+5].u = u1;
         ret[k+5].v = v1;
 
-        std::cout << (k+5) << std::endl;
-        std::cout << u << std::endl;
-        std::cout << v1 << std::endl;
+        //std::cout << (k+5) << std::endl;
+        //std::cout << u << std::endl;
+        //std::cout << v1 << std::endl;
     }
     this->mModel = ret;
     return ret;

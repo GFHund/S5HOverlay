@@ -12,6 +12,8 @@ class RenderFont{
 private:
     RGBA fontColor;
     RGBA bgColor;
+    float mLineHeight;
+    unsigned int mFontSize;
 
     FT_Library library;
     FT_Face face;
@@ -25,6 +27,7 @@ public:
     void setBgColor(unsigned char r,unsigned char g, unsigned char b,unsigned char a);
     void setFontFamily(std::string fontfile);
     void setFontSize(unsigned int size);
+    void setLineHeight(float lineHeight);
 
     Image* renderFont(std::string text);
 };

@@ -7,6 +7,7 @@ class Font{
     std::string mFontFamily;
     RGBA mFontColor;
     RGBA mBgColor;
+    float mLineHeight;
 
     public:
     void setFontSize(int size){
@@ -21,6 +22,9 @@ class Font{
     void setBackgroundColor(RGBA color){
         this->mBgColor = color;
     }
+    void setLineHeight(float lineHeight){
+        this->mLineHeight = lineHeight;
+    }
 
     int getFontSize(){
         return this->mFontSize;
@@ -33,6 +37,9 @@ class Font{
     }
     RGBA getBackgroundColor(){
         return this->mBgColor;
+    }
+    float getLineHeight(){
+        return this->mLineHeight;
     }
 };
 
